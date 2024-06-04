@@ -1,10 +1,11 @@
-import random
+"""import random
+import deck_of_cards
 
 
 desc_player_1 = []      # колода гравця 1
 desc_player_2 = []      # колода гравця 2
-cards_player_1 = 0      # корта на роздачі гравця 1
-cards_player_2 = 0      # корта на роздачі гравця 2
+#cards_player_1 = 0      # карта на роздачі гравця 1
+#cards_player_2 = 0      # карта на роздачі гравця 2
 
 desk_of_cards = []      # list із карт, перемішаний
 
@@ -21,8 +22,8 @@ def exit_game():     # преривання гри на вимогу, напри
 
 
 
-def visual_distrib():        # вызуальне роздавання карт на двох.
-    pass
+# def visual_distrib():        # вызуальне роздавання карт на двох.
+#    pass
 
 
 def distribution_of_cards(cards):      # розділ колоди на 2 частини
@@ -31,8 +32,6 @@ def distribution_of_cards(cards):      # розділ колоди на 2 час
              desc_player_1.append(i)
          else:
              desc_player_2.append(i)
-    print(len(desc_player_1), desc_player_1)
-    print(len(desc_player_2), desc_player_2)
 
     while len(desc_player_1) != len(desc_player_2):
         if len(desc_player_1) < len(desc_player_2):
@@ -44,6 +43,9 @@ def distribution_of_cards(cards):      # розділ колоди на 2 час
             a = desc_player_1.pop(x)
             desc_player_2.append(a)
 
+    print(len(desc_player_1), desc_player_1)
+    print(len(desc_player_2), desc_player_2)
+    return desc_player_1, desc_player_2
 
 def put_card():     # покласти карту на роздчу
     #print("Press the letter l  ")       #  розмістити в верхньлму провому куті
@@ -56,42 +58,35 @@ def put_card():     # покласти карту на роздчу
         pres_button = input()
         if pres_button == "s":
             cards_player_1 = selection_card(desc_player_1)
+            print(cards_player_1)
             x = 1
             continue
         elif  pres_button == "l":
-                cards_player_1 = selection_card(desc_player_2)
+                cards_player_2 = selection_card(desc_player_2)
+                print(cards_player_2)
                 y = 1
                 continue
 
+    return cards_player_1, cards_player_2
 
 
-"""
 def selection_card(desc_player):           # вибір карти для роздачі
     cards_player = desc_player[0]
-    desc_player.pop(0)
-    return cards_player
-
-"""
-
-
-def compare_cards(cards_player_1, cards_player_2):   # порівняти карти на роздачі
-    rank_cards_1 = rank_cards(cards_player_1)    # функція з файлу desk_of_cards
-    rank_cards_2 = rank_cards(cards_player_2)
-    if rank_cards_1 < rank_cards_2:
-        wins_player(cards_player_1, cards_player_2, desc_player_1)
-    else: wins_player(cards_player_2, cards_player_1, desc_player_2)
-    #if rank_cards_play_1 = rank_cards_play_2:   add_compare_cards()
+    return cards_player           # ?????????????????
 
 
 
-def  wins_player(player_1, player_2, desc_player):   # забирає виграні карти
-    desc_player = desc_player.appennd(player_1, player_2)
+def  wins_player(player_a, player_b, desc_player):   # забирає виграні карти
+    desc_player = desc_player.appennd(player_a, player_b)
     return desc_player
 
+
+
+
 # якщо буде час
-"""def  add_compare_cards():   # спір на роздачі
-    pass"""
+def  add_compare_cards():   # спір на роздачі
+    pass
 
 
-
+"""
 
