@@ -1,19 +1,37 @@
+def reading(file):
+    #print(file)
+    filename = f'{file}'
+    with open(filename) as file:
+        c = file.read()
+    return c.split(" ")
 
-name_player_1 = ""
-name_player_2 = ""
-
-
-def name_player():  # додавання ім'я ігрока
-    global  name_player_1
-    name_player_1 = input("Enter name player 1: ")
-    name_player_2 = input("Enter name player 2: ")
-    return name_player_1
-def visual_game(param_1):
-    print('(*-*)=(*-*)'*5)
-    print(f'Player 1:                                      Player 2:')
-    print(param_1)
+b = reading("suit.txt")
+print(b)
 
 
-name_player()
-print(name_player_1)
-visual_game(name_player_1)
+
+
+"""filename = 'suit.txt'
+with open(filename) as file:
+    c = file.read()
+    a = c.split(" ")
+print(a)"""
+
+"""def pretty_print(text, dash="#"):
+    new_text = f"{dash} {text} {dash}"
+    line_size = len(new_text)
+    horizontal_line = dash * line_size
+
+    # Replace lines to create and return new string
+    print(horizontal_line)
+    print(new_text)
+    print(horizontal_line)
+
+    # return <your solution here>
+
+
+# print(pretty_print("Python is not a snake", '/'))"""
+"""card_suit = open('suit.txt', 'r')
+.close()
+print(card_suit)
+"""
